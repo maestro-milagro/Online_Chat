@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Client {
     public static void main(String[] args) {
+        boolean flag = true;
         String host = "127.0.0.1";
         int port = 8085;
         try(Socket serverSocket = new Socket(host, port);
@@ -15,8 +16,6 @@ public class Client {
             final String qw = in.readLine();
             System.out.println(qw);
             Scanner scanner = new Scanner(System.in);
-//            Thread outThread = new Thread(() -> {
-//            });
             Thread inThread = new Thread(() -> {
                 while (true) {
                     String ans = null;
@@ -27,15 +26,20 @@ public class Client {
                         }
                     } catch (IOException e) {
                         System.out.println(e.getMessage());
+                        return;
                     }
                 }
             });
             inThread.start();
             while (true){
                 String fd = scanner.nextLine();
+                if (fd.equals("/exit")){
+                    serverSocket.close();
+//                    inThread.interrupt();
+                    return;
+                }
                 out.println(fd);
             }
-//            outThread.start();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }

@@ -27,12 +27,18 @@ public class Client2 {
                         }
                     } catch (IOException e) {
                         System.out.println(e.getMessage());
+                        return;
                     }
                 }
             });
             inThread.start();
             while (true){
                 String fd = scanner.nextLine();
+                if (fd.equals("/exit")){
+                    serverSocket.close();
+//                    inThread.interrupt();
+                    return;
+                }
                 out.println(fd);
             }
 //            outThread.start();

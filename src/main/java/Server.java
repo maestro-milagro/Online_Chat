@@ -2,17 +2,22 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
 
 public class Server {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Log log = Log.getInstance();
+        log.createLogFile();
         System.out.println("Server started");
         int port = 8085;
-        BlockingQueue<String> text = new ArrayBlockingQueue<>(5);
+        List<String> text = Collections.synchronizedList(new ArrayList<>());
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             while (true) {
+//                new EchoTread(text, serverSocket).start();
+//                if (EchoTread.interrupted()){
+//                    return;
+//                }
                 new Thread(() -> {
                     try {
                         Socket socket = serverSocket.accept();
@@ -23,34 +28,30 @@ public class Server {
                         final String name = input.readLine();
                         output.println(String.format("Hi %s! ", name));
                         Thread outThread = new Thread(() -> {
+                            int n = 0;
                             while (true) {
-                                if (text.size() > 0) {
-                                    System.out.println(text);
-                                    try {
-                                        String takenElem = text.take();
-                                        output.println(takenElem);
-                                    } catch (InterruptedException e) {
-                                        throw new RuntimeException(e);
-                                    }
-                                }
-                            }
-                        });
-                        Thread inThread = new Thread(() -> {
-                            while (true) {
-                                try {
-                                    String inp = input.readLine();
-                                    System.out.println(inp);
-                                    if (inp != null) {
-                                        text.put(inp);
-                                    }
-                                } catch (IOException | InterruptedException e) {
-                                    throw new RuntimeException(e);
+                                if (text.size() > n) {
+                                    String takenElem = text.get(n);
+                                    output.println(takenElem);
+                                    n++;
                                 }
                             }
                         });
                         outThread.start();
-                        inThread.start();
-
+//                        Thread inThread = new Thread(() -> {
+                            while (true) {
+                                try {
+                                    String inp = input.readLine();
+                                    if (inp != null) {
+                                        text.add(inp);
+                                        log.logging(name, inp);
+                                    }
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+//                        });
+//                        inThread.start();
                     } catch (IOException e) {
                         System.out.println(e.getMessage());
                     }
