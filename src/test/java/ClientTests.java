@@ -8,14 +8,14 @@ import java.io.IOException;
 
 public class ClientTests {
     @Test
-    public void setPortTest(){
+    public void setPortTest() {
         Client client = new Client();
         int newPort = 8086;
         String expected = "port - 8086";
         String result = "";
 
         client.setPort(newPort);
-        File file = new File("C:","port.txt");
+        File file = new File("C:", "port.txt");
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String s;
             while ((s = br.readLine()) != null) {
@@ -27,6 +27,7 @@ public class ClientTests {
 
         Assertions.assertEquals(expected, result);
     }
+
     @Test
     public void getPortTest() {
         Client client = new Client();

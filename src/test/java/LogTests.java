@@ -8,13 +8,14 @@ import java.io.IOException;
 
 public class LogTests {
     @Test
-    public void getInstanceTest(){
+    public void getInstanceTest() {
         Log unExpected = null;
 
         Log result = Log.getInstance();
 
         Assertions.assertNotEquals(unExpected, result);
     }
+
     @Test
     public void createLogFileTest() throws IOException {
         Log log = Log.getInstance();
@@ -24,6 +25,7 @@ public class LogTests {
 
         Assertions.assertNotNull(result);
     }
+
     @Test
     public void loggingTest() throws IOException {
         Log log = Log.getInstance();
@@ -33,8 +35,8 @@ public class LogTests {
         String expected = "Hello!";
 
 
-        log.logging(name,msg);
-        File file = new File("C:","Log.txt");
+        log.logging(name, msg);
+        File file = new File("C:", "Log.txt");
         String ans = "";
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String s;
@@ -44,7 +46,7 @@ public class LogTests {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-        String preResult = ans.split("  ")[ans.split("  ").length-1];
+        String preResult = ans.split("  ")[ans.split("  ").length - 1];
         String result = preResult.split(" ")[1];
 
         Assertions.assertEquals(expected, result);

@@ -8,7 +8,9 @@ public class Log {
     public static Log INSTANCE = null;
     public static File logFile = null;
 
-    private Log() {}
+    private Log() {
+    }
+
     public static Log getInstance() {
         if (INSTANCE == null) {
             synchronized (Log.class) {
@@ -19,11 +21,12 @@ public class Log {
         }
         return INSTANCE;
     }
+
     public void createLogFile() throws IOException {
-        if(logFile == null) {
+        if (logFile == null) {
             logFile = new File("C:", "Log.txt");
             try {
-                if (logFile.createNewFile());
+                if (logFile.createNewFile()) ;
             } catch (IOException ex) {
                 System.out.println(ex.getMessage());
             }
