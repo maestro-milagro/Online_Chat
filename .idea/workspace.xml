@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f3d6e3-0181-461a-b01c-4bddbee3ceb3" name="Changes" comment="intermediate commit">
+    <list default="true" id="d1f3d6e3-0181-461a-b01c-4bddbee3ceb3" name="Changes" comment="log added, exit from chat added">
+      <change afterPath="$PROJECT_DIR$/port.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/EchoTread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ClientTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/LogTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ServerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Log.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,11 +76,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LogTests.loggingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Online_Chat" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LogTests" />
+      <option name="METHOD_NAME" value="loggingTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client2" />
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Client2" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.LogTests.loggingTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -104,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683745247695</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="log added, exit from chat added">
+      <created>1684503130428</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684503130428</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -121,6 +143,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit" />
     <MESSAGE value="intermediate commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="intermediate commit" />
+    <MESSAGE value="log added, exit from chat added" />
+    <option name="LAST_COMMIT_MESSAGE" value="log added, exit from chat added" />
   </component>
 </project>

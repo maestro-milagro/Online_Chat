@@ -7,17 +7,14 @@ import java.util.List;
 
 public class Server {
     public static void main(String[] args) throws IOException {
+        Server server = new Server();
         Log log = Log.getInstance();
         log.createLogFile();
         System.out.println("Server started");
-        int port = 8085;
+        int port = server.getPort();
         List<String> text = Collections.synchronizedList(new ArrayList<>());
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             while (true) {
-//                new EchoTread(text, serverSocket).start();
-//                if (EchoTread.interrupted()){
-//                    return;
-//                }
                 new Thread(() -> {
                     try {
                         Socket socket = serverSocket.accept();
@@ -39,17 +36,17 @@ public class Server {
                         });
                         outThread.start();
 //                        Thread inThread = new Thread(() -> {
-                            while (true) {
-                                try {
-                                    String inp = input.readLine();
-                                    if (inp != null) {
-                                        text.add(inp);
-                                        log.logging(name, inp);
-                                    }
-                                } catch (IOException e) {
-                                    throw new RuntimeException(e);
+                        while (true) {
+                            try {
+                                String inp = input.readLine();
+                                if (inp != null) {
+                                    text.add(inp);
+                                    log.logging(name, inp);
                                 }
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
                             }
+                        }
 //                        });
 //                        inThread.start();
                     } catch (IOException e) {
@@ -62,5 +59,32 @@ public class Server {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void setPort(int newValue) {
+        File file = new File("C:","port.txt");
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, false))) {
+            String text = "port - " + newValue;
+            bw.write(text);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public int getPort() {
+        File file = new File("C:","port.txt");
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String ans = "";
+            String s;
+            while ((s = br.readLine()) != null) {
+                ans += s;
+            }
+            String[] useless = ans.split(" ");
+            int port = Integer.parseInt(useless[useless.length-1]);
+            return port;
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return 0;
     }
 }

@@ -1,22 +1,18 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
 public class Client2 {
     public static void main(String[] args) {
+        Client client = new Client();
         String host = "127.0.0.1";
-        int port = 8085;
+        int port = client.getPort();
         try(Socket serverSocket = new Socket(host, port);
             PrintWriter out = new PrintWriter(serverSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()))) {
             final String qw = in.readLine();
             System.out.println(qw);
             Scanner scanner = new Scanner(System.in);
-//            Thread outThread = new Thread(() -> {
-//            });
             Thread inThread = new Thread(() -> {
                 while (true) {
                     String ans = null;
@@ -36,14 +32,42 @@ public class Client2 {
                 String fd = scanner.nextLine();
                 if (fd.equals("/exit")){
                     serverSocket.close();
-//                    inThread.interrupt();
                     return;
+                }
+                if (fd.equals("/port")) {
+                    System.out.println("port - " + client.getPort());
+                    continue;
                 }
                 out.println(fd);
             }
-//            outThread.start();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+    public void setPort(int newValue) {
+        File file = new File("C:","port.txt");
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, false))) {
+            String text = "port - " + newValue;
+            bw.write(text);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public int getPort() {
+        File file = new File("C:","port.txt");
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String ans = "";
+            String s;
+            while ((s = br.readLine()) != null) {
+                ans += s;
+            }
+            String[] useless = ans.split(" ");
+            int port = Integer.parseInt(useless[useless.length-1]);
+            return port;
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return 0;
     }
 }

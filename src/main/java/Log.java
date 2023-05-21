@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -35,11 +34,10 @@ public class Log {
         LocalDateTime time = LocalDateTime.now();
         System.out.printf("[%s](%s): %s\n", name, time.format(DateTimeFormatter.ofPattern("HH:mm")), msg);
 
-        String text = "[" + name + "](" + time.format(DateTimeFormatter.ofPattern("HH:mm")) + "): " + msg + "\n";
+        String text = "[" + name + "](" + time.format(DateTimeFormatter.ofPattern("HH:mm")) + "): " + msg + "  \n";
 
         try (FileWriter writer = new FileWriter(logFile, true)) {
             writer.write(text);
-//            writer.append('\n');
             writer.flush();
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
