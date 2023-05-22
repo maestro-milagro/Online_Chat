@@ -24,7 +24,7 @@ public class Log {
 
     public void createLogFile() throws IOException {
         if (logFile == null) {
-            logFile = new File("C:", "Log.txt");
+            logFile = new File(".", "Log.txt");
             try {
                 if (logFile.createNewFile()) ;
             } catch (IOException ex) {

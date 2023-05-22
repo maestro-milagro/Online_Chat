@@ -59,7 +59,7 @@ public class Server {
     }
 
     public void setPort(int newValue) {
-        File file = new File("C:", "port.txt");
+        File file = new File(".", "port.txt");
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, false))) {
             String text = "port - " + newValue;
             bw.write(text);
@@ -69,7 +69,7 @@ public class Server {
     }
 
     public int getPort() {
-        File file = new File("C:", "port.txt");
+        File file = new File(".", "port.txt");
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String ans = "";
             String s;
