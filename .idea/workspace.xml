@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1f3d6e3-0181-461a-b01c-4bddbee3ceb3" name="Changes" comment="log added, exit from chat added">
-      <change afterPath="$PROJECT_DIR$/port.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EchoTread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ClientTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LogTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ServerTests.java" afterDir="false" />
+    <list default="true" id="d1f3d6e3-0181-461a-b01c-4bddbee3ceb3" name="Changes" comment="refactoring">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Client2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Client2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Log.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +41,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/milla/IdeaProjects/Work whith files 1&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Client2">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="Online_Chat" />
@@ -88,8 +82,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Client2" />
+        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.LogTests.loggingTest" />
         <item itemvalue="Application.Main" />
@@ -126,7 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684503130428</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Unit tests added">
+      <created>1684685256190</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684685256190</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactoring">
+      <created>1684685326562</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684685326562</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +152,8 @@
     <MESSAGE value="Init commit" />
     <MESSAGE value="intermediate commit" />
     <MESSAGE value="log added, exit from chat added" />
-    <option name="LAST_COMMIT_MESSAGE" value="log added, exit from chat added" />
+    <MESSAGE value="Unit tests added" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
 </project>

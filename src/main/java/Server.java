@@ -35,7 +35,6 @@ public class Server {
                             }
                         });
                         outThread.start();
-//                        Thread inThread = new Thread(() -> {
                         while (true) {
                             try {
                                 String inp = input.readLine();
@@ -47,8 +46,6 @@ public class Server {
                                 throw new RuntimeException(e);
                             }
                         }
-//                        });
-//                        inThread.start();
                     } catch (IOException e) {
                         System.out.println(e.getMessage());
                     }

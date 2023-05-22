@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Client2 {
     public static void main(String[] args) {
-        Client client = new Client();
+        Client2 client = new Client2();
         String host = "127.0.0.1";
         int port = client.getPort();
         try (Socket serverSocket = new Socket(host, port);
