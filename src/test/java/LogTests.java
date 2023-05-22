@@ -36,7 +36,7 @@ public class LogTests {
 
 
         log.logging(name, msg);
-        File file = new File("C:", "Log.txt");
+        File file = new File(".", "Log.txt");
         String ans = "";
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String s;

@@ -15,7 +15,7 @@ public class ServerTests {
         String result = "";
 
         server.setPort(newPort);
-        File file = new File("C:", "port.txt");
+        File file = new File(".", "port.txt");
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String s;
             while ((s = br.readLine()) != null) {
