@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1f3d6e3-0181-461a-b01c-4bddbee3ceb3" name="Changes" comment="Refactoring">
-      <change beforePath="$PROJECT_DIR$/src/test/java/ClientTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ClientTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LogTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LogTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ServerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ServerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/milla/IdeaProjects/Work whith files 1&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ClientTests.setPortTest">
+  <component name="RunManager" selected="Application.Client2">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="Online_Chat" />
@@ -84,10 +82,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClientTests.setPortTest" />
+        <item itemvalue="Application.Client2" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.Client2" />
+        <item itemvalue="JUnit.ClientTests.setPortTest" />
         <item itemvalue="JUnit.LogTests.loggingTest" />
       </list>
     </recent_temporary>
@@ -150,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684772252424</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactoring">
+      <created>1684772351528</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684772351528</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

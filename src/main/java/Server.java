@@ -15,9 +15,9 @@ public class Server {
         List<String> text = Collections.synchronizedList(new ArrayList<>());
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             while (true) {
+                Socket socket = serverSocket.accept();
                 new Thread(() -> {
                     try {
-                        Socket socket = serverSocket.accept();
                         PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
                         BufferedReader input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                         System.out.println("New connection accepted");
